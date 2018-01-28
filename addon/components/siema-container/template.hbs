@@ -1,0 +1,6 @@
+
+{{yield (hash
+  slides=(component 'siema-slides' elementId=(concat "slides-" elementId))
+  prev=(component 'move-el' click=(action 'prev'))
+  next=(component 'move-el' click=(action 'next'))
+)}}

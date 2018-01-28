@@ -14,5 +14,8 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
+  app.import('node_modules/siema/dist/siema.min.js');
+  app.import('vendor/shims/siema.js');
+
   return app.toTree();
 };

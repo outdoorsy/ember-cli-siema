@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-siema/components/move-el/component';

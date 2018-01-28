@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-siema/components/siema-slides/component';

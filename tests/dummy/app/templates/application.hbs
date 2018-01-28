@@ -1,3 +1,22 @@
 <h2 id="title">Welcome to Ember</h2>
 
+
+{{#siema-container
+  options=(hash
+    loop=true)
+  as |siema|}}
+  {{#siema.slides}}
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+    <img src='https://placehold.it/300x300'>
+  {{/siema.slides}}
+  {{#siema.next}}<button>Next</button>{{/siema.next}}
+  {{#siema.prev}}<button>Prev</button>{{/siema.prev}}
+{{/siema-container}}
 {{outlet}}
