@@ -35,21 +35,25 @@ export default Component.extend({
   didInsertElement() {
       let that = this;
       let slidesEl = document.getElementById(`slides-${this.elementId}`);
+      let initialSlide = this.get('initialSlide');
       let options = assign({}, this.get('options'), {
         selector: slidesEl,
-        startIndex: this.get('initialSlide'),
         onChange: function() {
           let current = this.currentSlide;
           that.get('hasRendered').pushObject(current);
           that.set('currentSlide', current);
         }
       });
+
+      if (initialSlide) {
+        options.startIndex = initialSlide;
+      }
+
       let siema = new Siema(options);
       this.set('_siema', siema);
       if (this.get('autoInterval')) {
         let interval = setInterval(() => {
           siema.next(1);
-          console.log('next!');
         }, this.get('autoInterval'));
         this.set('interval', interval);
       }
